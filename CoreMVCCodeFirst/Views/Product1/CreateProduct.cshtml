@@ -1,0 +1,23 @@
+﻿@model ProductPageVM
+
+<form asp-controller="Product1" asp-action="CreateProduct" method="post" class="form">
+    <div>
+        <input asp-for="Product.ProductName" class="form-control" placeholder="Ürün ismi giriniz"/>
+    </div>
+    <div>
+        <input asp-for="Product.UnitPrice" class="form-control" placeholder="Ürün fiyatı giriniz" />
+    </div>
+    <div>
+        <select asp-for="Product.CategoryID" asp-items='new SelectList(Model.Categories,"ID","CategoryName")'>
+
+            <option>
+                Lütfen seçiniz
+            </option>
+        </select>
+    </div>
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+</form>
